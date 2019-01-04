@@ -1,7 +1,13 @@
-<h1>All Episodes</h1>
+<div style="font-family: helvetica">
+  <h1>All Episodes</h1>
 
-<ul>
-  <% @episodes.each do |episode| %>
-    <li><%= "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}"%></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @episodes.each do |episode| %>
+      <li><%= link_to "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}", episode_path(episode)%></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Create an Appearance", new_appearance_path %><br>
+  <%= link_to "Go to Guests", guests_path %>
+
+</div>
